@@ -13,4 +13,11 @@
         android:text="Haloo Aja">
     </TextView>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:text="Haloo Banget">
+    </TextView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
