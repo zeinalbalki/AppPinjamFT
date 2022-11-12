@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PinjamFT</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="text_username">Username</string>
+    <string name="text_password">Password</string>
+    <string name="text_confPassword">Confirm Password</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_menu_pengajuan">MenuPengajuan</string>
+    <string name="action_settings">Settings</string>
+</resources>
