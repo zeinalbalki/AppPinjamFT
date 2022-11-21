@@ -50,6 +50,16 @@ public class DBHelper extends SQLiteOpenHelper {
         db.insert(table_login, null, values);
     }
 
+    //Update Data
+    public void updateData(ContentValues values, long id){
+        db.update(table_login, values, input_idUser + "=" + id, null);
+    }
+
+    //Delete Data
+    public void deleteData(long id){
+        db.delete(table_login, input_idUser + "=" + id, null);
+    }
+
     public boolean checkUser(String username, String password){
         String[] id = {input_idUser};
         SQLiteDatabase db = getReadableDatabase();

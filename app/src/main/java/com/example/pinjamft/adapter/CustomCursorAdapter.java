@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.example.pinjamft.R;
 
+import org.w3c.dom.Text;
+
 public class CustomCursorAdapter extends CursorAdapter {
 
     private LayoutInflater ly;
@@ -45,7 +47,7 @@ public class CustomCursorAdapter extends CursorAdapter {
         return v;
     }
 
-    @SuppressLint("Range")
+    @SuppressLint({"Range", "SetTextI18n"})
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         MyHolder holder = (MyHolder)view.getTag();

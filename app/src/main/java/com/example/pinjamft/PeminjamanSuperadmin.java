@@ -43,7 +43,7 @@ public class PeminjamanSuperadmin extends AppCompatActivity implements AdapterVi
         fabAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PeminjamanSuperadmin.this, RegisterActivity.class));
+                startActivity(new Intent(PeminjamanSuperadmin.this, KelolaAdmin.class));
             }
         });
 

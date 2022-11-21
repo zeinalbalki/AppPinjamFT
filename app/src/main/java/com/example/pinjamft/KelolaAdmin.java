@@ -58,14 +58,14 @@ public class KelolaAdmin extends AppCompatActivity implements AdapterView.OnItem
 
     public void allData(){
         Cursor cursor = dbHelper.allData();
-        CustomCursorAdapter customCursorAdapter = new CustomCursorAdapter(this, cursor, 1);
-        Is.setAdapter(customCursorAdapter);
+        CustomCursor customCursor = new CustomCursor(this, cursor, 1);
+        Is.setAdapter(customCursor);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_admin, menu);
+        getMenuInflater().inflate(R.menu.menu_kelola_admin, menu);
         return true;
     }
 
@@ -76,8 +76,8 @@ public class KelolaAdmin extends AppCompatActivity implements AdapterView.OnItem
         Cursor cur = dbHelper.oneData(id);
         cur.moveToFirst();
 
-        Intent idpinjam = new Intent(KelolaAdmin.this, AddActivity.class);
-        idpinjam.putExtra(DBHelperPeminjaman.row_id, id);
+        Intent idpinjam = new Intent(KelolaAdmin.this, TambahAdmin.class);
+        idpinjam.putExtra(DBHelper.input_idUser, id);
         startActivity(idpinjam);
     }
 
@@ -96,13 +96,9 @@ public class KelolaAdmin extends AppCompatActivity implements AdapterView.OnItem
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.logout) {
-            Intent intent = new Intent(KelolaAdmin.this, HomeUser.class);
+            Intent intent = new Intent(KelolaAdmin.this, PeminjamanSuperadmin.class);
             startActivity(intent);
             return true;
-        } else if (id == R.id.sort){
-            DialogFragment dialogFragment = new DialogChoice();
-            dialogFragment.setCancelable(false);
-            dialogFragment.show(getSupportFragmentManager(), "Choice Dialog");
         }
 
         return super.onOptionsItemSelected(item);

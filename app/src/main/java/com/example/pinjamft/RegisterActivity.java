@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
                     helper.insertDataLogin(values);
 
                     Toast.makeText(RegisterActivity.this, "Register Berhasil", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(RegisterActivity.this, KelolaAdmin.class);
                     startActivity(intent);
                 }
                 clear();
@@ -61,13 +61,13 @@ public class RegisterActivity extends AppCompatActivity {
 
         ToLogin = (TextView) findViewById(R.id.toLogin);
         ToLogin.setText(fromHtml("Kembali ke Menu " +
-                "</font><font color='#3b5988'>Peminjaman</font>"));
+                "</font><font color='#3b5988'>Kelola Admin</font>"));
         ToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(RegisterActivity.this, PeminjamanSuperadmin.class);
+                Intent intent = new Intent(RegisterActivity.this, KelolaAdmin.class);
                 startActivity(intent);
-                Toast.makeText(RegisterActivity.this, "Halaman Peminjaman", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "Halaman Kelola Admin", Toast.LENGTH_SHORT).show();
             }
         });
     }
