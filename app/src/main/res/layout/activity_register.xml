@@ -47,7 +47,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:text="Register"
+                android:text="Tambah Admin"
                 android:textSize="20dp"
                 android:textStyle="bold">
             </TextView>
@@ -130,7 +130,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:text="REGISTER"
+                android:text="Tambah"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:background="@drawable/button_login">

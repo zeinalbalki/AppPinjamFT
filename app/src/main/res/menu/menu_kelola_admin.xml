@@ -2,14 +2,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.pinjamft.Peminjaman">
+
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/logout"
         android:orderInCategory="100"
-        android:title="Menu Utama"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/sort"
-        android:orderInCategory="200"
-        android:title="Urutkan"
+        android:title="Menu Superadmin"
         app:showAsAction="never" />
 </menu>

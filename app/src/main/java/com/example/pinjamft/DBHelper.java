@@ -22,6 +22,17 @@ public class DBHelper extends SQLiteOpenHelper {
         db = getWritableDatabase();
     }
 
+    public Cursor allData(){
+        Cursor cur = db.rawQuery("SELECT * FROM " + table_login + " ORDER BY " + input_idUser + " DESC ", null);
+        return cur;
+    }
+
+    //GET 1 DATA BY ID
+    public Cursor oneData(long id){
+        Cursor cur = db.rawQuery("SELECT * FROM " + table_login + " WHERE " + input_idUser + "=" + id, null);
+        return cur;
+    }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
 

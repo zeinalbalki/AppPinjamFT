@@ -19,10 +19,10 @@ import com.example.pinjamft.adapter.CustomCursorAdapter;
 import com.example.pinjamft.adapter.DBHelperPeminjaman;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class Peminjaman extends AppCompatActivity implements AdapterView.OnItemClickListener, DialogChoice.DialogChoiceListener {
+public class KelolaAdmin extends AppCompatActivity implements AdapterView.OnItemClickListener, DialogChoice.DialogChoiceListener {
 
     ListView Is;
-    DBHelperPeminjaman dbHelper;
+    DBHelper dbHelper;
     Context context;
     int listData;
     SharedPreferences viewData;
@@ -30,18 +30,18 @@ public class Peminjaman extends AppCompatActivity implements AdapterView.OnItemC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_peminjaman);
+        setContentView(R.layout.activity_kelola_admin);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Peminjaman.this, AddActivity.class));
+                startActivity(new Intent(KelolaAdmin.this, RegisterActivity.class));
             }
         });
 
-        dbHelper = new DBHelperPeminjaman(this);
-        Is = (ListView)findViewById(R.id.list_pinjam);
+        dbHelper = new DBHelper(this);
+        Is = (ListView)findViewById(R.id.list_admin);
         Is.setOnItemClickListener(this);
 
         viewData = getSharedPreferences("currentListView", 0);
@@ -53,35 +53,11 @@ public class Peminjaman extends AppCompatActivity implements AdapterView.OnItemC
     private void setupListView() {
         if (listData == 0){
             allData();
-        }else if (listData == 1){
-            dataBelumDisetujui();
-        }else if (listData == 2){
-            dataDisetujui();
-        }else if (listData == 3){
-            dataSelesai();
         }
     }
 
     public void allData(){
         Cursor cursor = dbHelper.allData();
-        CustomCursorAdapter customCursorAdapter = new CustomCursorAdapter(this, cursor, 1);
-        Is.setAdapter(customCursorAdapter);
-    }
-
-    public void dataBelumDisetujui(){
-        Cursor cursor = dbHelper.dataBelumDisetujui();
-        CustomCursorAdapter customCursorAdapter = new CustomCursorAdapter(this, cursor, 1);
-        Is.setAdapter(customCursorAdapter);
-    }
-
-    public void dataDisetujui(){
-        Cursor cursor = dbHelper.dataDisetujui();
-        CustomCursorAdapter customCursorAdapter = new CustomCursorAdapter(this, cursor, 1);
-        Is.setAdapter(customCursorAdapter);
-    }
-
-    public void dataSelesai(){
-        Cursor cursor = dbHelper.dataSelesai();
         CustomCursorAdapter customCursorAdapter = new CustomCursorAdapter(this, cursor, 1);
         Is.setAdapter(customCursorAdapter);
     }
@@ -100,7 +76,7 @@ public class Peminjaman extends AppCompatActivity implements AdapterView.OnItemC
         Cursor cur = dbHelper.oneData(id);
         cur.moveToFirst();
 
-        Intent idpinjam = new Intent(Peminjaman.this, AddActivity.class);
+        Intent idpinjam = new Intent(KelolaAdmin.this, AddActivity.class);
         idpinjam.putExtra(DBHelperPeminjaman.row_id, id);
         startActivity(idpinjam);
     }
@@ -120,7 +96,7 @@ public class Peminjaman extends AppCompatActivity implements AdapterView.OnItemC
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.logout) {
-            Intent intent = new Intent(Peminjaman.this, HomeUser.class);
+            Intent intent = new Intent(KelolaAdmin.this, HomeUser.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.sort){
@@ -141,21 +117,6 @@ public class Peminjaman extends AppCompatActivity implements AdapterView.OnItemC
             editor.apply();
 
             allData();
-        }else if (position == 1){
-            editor.putInt("currentListView", 1);
-            editor.apply();
-
-            dataBelumDisetujui();
-        }else if (position == 2){
-            editor.putInt("currentListView", 2);
-            editor.apply();
-
-            dataDisetujui();
-        }else if (position == 3){
-            editor.putInt("currentListView", 2);
-            editor.apply();
-
-            dataSelesai();
         }
     }
 

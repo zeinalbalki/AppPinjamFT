@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class HomeUser extends AppCompatActivity {
 
-    Button BtnAjukan, BtnLihatSemuaPengajuan;
+    Button BtnAjukan, BtnLoginAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,14 @@ public class HomeUser extends AppCompatActivity {
 
         BtnAjukan = (Button) findViewById(R.id.btnAjukan);
         BtnAjukan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeUser.this, PeminjamanUser.class);
+                startActivity(intent);
+            }
+        });
+        BtnLoginAdmin = (Button) findViewById(R.id.btnLoginAdmin);
+        BtnLoginAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeUser.this, LoginActivity.class);

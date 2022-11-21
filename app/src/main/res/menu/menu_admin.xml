@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.pinjamft.Peminjaman">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="Menu Utama"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/sort"
         android:orderInCategory="200"
         android:title="Urutkan"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/logout"
+        android:orderInCategory="100"
+        android:title="Logout"
         app:showAsAction="never" />
 </menu>

@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="30dp"
         android:text="PinjamFT"
         android:textSize="20dp"
         android:textColor="@color/white"
@@ -48,7 +48,6 @@
         android:id="@+id/textdeskripsi"
         android:textColor="@color/white"
         android:gravity="center"
-        android:text="Silahkan mengajukan peminjaman ruangan maupun alat di aplikasi ini!"
         android:fontFamily="@font/montserratthin"
         tools:ignore="RtlCompat" />
 
@@ -57,7 +56,7 @@
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:layout_below="@id/imgBg"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
         android:id="@+id/textjudul2"
         android:textColor="@color/black"
@@ -82,23 +81,23 @@
 
 
     <Button
-        android:id="@+id/btnListAll"
+        android:id="@+id/btnLoginAdmin"
         android:layout_below="@id/textdeskripsi2"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins"
         android:textSize="16dp"
-        android:drawableLeft="@drawable/list"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
         android:paddingLeft="20dp"
         android:drawablePadding="-40dp"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginTop="100dp"
         android:background="@drawable/radius_button"
-        android:text="List Semua pengajuan" />
+        android:text="Login Admin" />
 
     <Button
         android:id="@+id/btnAjukan"
-        android:layout_below="@id/btnListAll"
+        android:layout_below="@id/btnLoginAdmin"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins"
         android:textSize="16dp"

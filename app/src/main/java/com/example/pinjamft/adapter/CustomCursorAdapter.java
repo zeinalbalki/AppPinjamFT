@@ -32,9 +32,13 @@ public class CustomCursorAdapter extends CursorAdapter {
         MyHolder holder = new MyHolder();
 
         holder.ListID = (TextView)v.findViewById(R.id.listID);
-        holder.ListJudul = (TextView)v.findViewById(R.id.listJudul);
-        holder.ListNama = (TextView)v.findViewById(R.id.listNama);
-        holder.ListPinjam = (TextView)v.findViewById(R.id.listTglPinjam);
+        holder.ListNamaPeminjam = (TextView) v.findViewById(R.id.listNamaPeminjam);
+        holder.ListNimPeminjam = (TextView) v.findViewById(R.id.listNimPeminjam);
+        holder.ListLembaga = (TextView) v.findViewById(R.id.listLembaga);
+        holder.ListPerihal = (TextView) v.findViewById(R.id.listPerihal);
+        holder.ListJenisPengajuan = (TextView) v.findViewById(R.id.listJenisPengajuan);
+        holder.ListTanggalPengajuan = (TextView) v.findViewById(R.id.listTanggalPengajuan);
+        holder.ListTanggalPeminjaman = (TextView) v.findViewById(R.id.listTanggalPeminjaman);
         holder.ListStatus = (TextView)v.findViewById(R.id.listStatus);
 
         v.setTag(holder);
@@ -47,18 +51,26 @@ public class CustomCursorAdapter extends CursorAdapter {
         MyHolder holder = (MyHolder)view.getTag();
 
         holder.ListID.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_id)));
-        holder.ListJudul.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_judul)));
-        holder.ListNama.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_nama)));
-        holder.ListPinjam.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_pinjam)) +
-                " - " + cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_kembali)));
-        holder.ListStatus.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_status)));
+        holder.ListNamaPeminjam.setText("Nama Peminjam : " + cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_nama_peminjam)));
+        holder.ListNimPeminjam.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_nim_peminjam)));
+        holder.ListLembaga.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_lembaga)));
+        holder.ListPerihal.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_perihal)));
+        holder.ListJenisPengajuan.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_jenis_pengajuan)));
+        holder.ListTanggalPengajuan.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_tanggal_pengajuan)));
+        holder.ListTanggalPeminjaman.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_tanggal_peminjaman)) +
+                " - " + cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_tanggal_selesai)));
+        holder.ListStatus.setText("Status: " + cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_status)));
     }
 
     class MyHolder{
         TextView ListID;
-        TextView ListJudul;
-        TextView ListNama;
-        TextView ListPinjam;
+        TextView ListNamaPeminjam;
+        TextView ListNimPeminjam;
+        TextView ListLembaga;
+        TextView ListPerihal;
+        TextView ListJenisPengajuan;
+        TextView ListTanggalPengajuan;
+        TextView ListTanggalPeminjaman;
         TextView ListStatus;
     }
 }

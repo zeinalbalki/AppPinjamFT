@@ -42,10 +42,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(data == true){
                     Intent intent;
-                    if(username == "admin"){
-                        intent = new Intent(LoginActivity.this, MenuAdmin.class);
+                    if(username.equals("superadmin")){
+                        intent = new Intent(LoginActivity.this, PeminjamanSuperadmin.class);
                     } else {
-                        intent = new Intent(LoginActivity.this, MenuAdmin.class);
+                        intent = new Intent(LoginActivity.this, Peminjaman.class);
                     }
                     startActivity(intent);
 
@@ -58,15 +58,15 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         ToRegister = (TextView) findViewById(R.id.toRegister);
-        ToRegister.setText(fromHtml("Don't have account? Create " +
-                "</font><font color='#3b5988'>Account</font>"));
+        ToRegister.setText(fromHtml("Bukan admin? kembali ke " +
+                "</font><font color='#3b5988'>Menu Utama</font>"));
 
         ToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(LoginActivity.this, HomeUser.class);
                 startActivity(intent);
-                Toast.makeText(LoginActivity.this, "Halaman Register", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Halaman Menu Utama", Toast.LENGTH_SHORT).show();
             }
         });
     }

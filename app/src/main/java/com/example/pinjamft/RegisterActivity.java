@@ -60,14 +60,14 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
         ToLogin = (TextView) findViewById(R.id.toLogin);
-        ToLogin.setText(fromHtml("Already registered? Back to " +
-                "</font><font color='#3b5988'>Login</font>"));
+        ToLogin.setText(fromHtml("Kembali ke Menu " +
+                "</font><font color='#3b5988'>Peminjaman</font>"));
         ToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                Intent intent = new Intent(RegisterActivity.this, PeminjamanSuperadmin.class);
                 startActivity(intent);
-                Toast.makeText(RegisterActivity.this, "Halaman Login", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "Halaman Peminjaman", Toast.LENGTH_SHORT).show();
             }
         });
     }

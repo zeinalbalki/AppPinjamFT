@@ -8,18 +8,21 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelperPeminjaman extends SQLiteOpenHelper {
 
-    public static final String database_name = "db_perpus";
-    public static final String tabel_name = "tabel_perpus";
+    public static final String database_name = "db_peminjaman";
+    public static final String tabel_name = "tabel_pinjamft";
 
     public static final String row_id = "_id";
-    public static final String row_nama = "Nama";
-    public static final String row_judul = "Judul";
-    public static final String row_pinjam = "TglPinjam";
-    public static final String row_kembali = "TglKembali";
+    public static final String row_nama_peminjam = "NamaPeminjam";
+    public static final String row_nim_peminjam = "NimPeminjam";
+    public static final String row_lembaga = "Lembaga";
+    public static final String row_perihal = "Perihal";
+    public static final String row_jenis_pengajuan = "JenisPengajuan";
+    public static final String row_tanggal_pengajuan = "TanggalPengajuan";
+    public static final String row_tanggal_peminjaman = "TanggalPeminjaman";
+    public static final String row_tanggal_selesai = "TanggalSelesai";
     public static final String row_status = "Status";
 
     private SQLiteDatabase db2;
-
 
     public DBHelperPeminjaman(Context context) {
         super(context, database_name, null, 2);
@@ -29,13 +32,33 @@ public class DBHelperPeminjaman extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + tabel_name + "(" + row_id + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + row_nama + " TEXT," + row_judul + " TEXT," + row_pinjam + " TEXT," + row_kembali + " TEXT," + row_status + " TEXT)";
+                + row_nama_peminjam + " TEXT," + row_nim_peminjam + " TEXT," + row_lembaga + " TEXT," +
+                row_perihal + " TEXT," + row_jenis_pengajuan + " TEXT," + row_tanggal_pengajuan + " TEXT," +
+                row_tanggal_peminjaman + " TEXT," + row_tanggal_selesai + " TEXT," + row_status + " TEXT)";
         db.execSQL(query);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + tabel_name);
+    }
+
+    //Get Data Belum Disetujui
+    public Cursor dataBelumDisetujui(){
+        Cursor cur = db2.rawQuery("SELECT * FROM " + tabel_name + " WHERE " + row_status + "=" + "'Belum Disetujui'", null);
+        return cur;
+    }
+
+    //Get Data Disetujui
+    public Cursor dataDisetujui(){
+        Cursor cur = db2.rawQuery("SELECT * FROM " + tabel_name + " WHERE " + row_status + "=" + "'Disetujui'", null);
+        return cur;
+    }
+
+    //Get Data Selesai
+    public Cursor dataSelesai(){
+        Cursor cur = db2.rawQuery("SELECT * FROM " + tabel_name + " WHERE " + row_status + "=" + "'Selesai'", null);
+        return cur;
     }
 
     //Get All SQLite Data

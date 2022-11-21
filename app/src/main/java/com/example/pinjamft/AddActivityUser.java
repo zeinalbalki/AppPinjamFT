@@ -26,11 +26,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class AddActivity extends AppCompatActivity {
+public class AddActivityUser extends AppCompatActivity {
 
     DBHelperPeminjaman dbHelper;
     TextView TvStatus;
-    Button BtnProses, BtnPersetujuan;
+    Button BtnProses;
     EditText TxID, TxNamaPeminjam, TxNIM, TxLembaga, TxPerihal, TxJenisPengajuan, TxTglPengajuan, TxTglPeminjaman,
             TxTglSelesai, TxStatus;
     long id;
@@ -40,7 +40,7 @@ public class AddActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
+        setContentView(R.layout.activity_add_user);
 
         dbHelper = new DBHelperPeminjaman(this);
 
@@ -59,7 +59,6 @@ public class AddActivity extends AppCompatActivity {
 
         TvStatus = (TextView)findViewById(R.id.tVStatus);
         BtnProses = (Button)findViewById(R.id.btnProses);
-        BtnPersetujuan = (Button)findViewById(R.id.btnPersetujuan);
 
         dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
 
@@ -79,13 +78,6 @@ public class AddActivity extends AppCompatActivity {
             }
         });
 
-        BtnPersetujuan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                prosesPersetujuan();
-            }
-        });
-
         BtnProses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,37 +90,8 @@ public class AddActivity extends AppCompatActivity {
         menu.setDisplayHomeAsUpEnabled(true);
     }
 
-    private void prosesPersetujuan() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(AddActivity.this);
-        builder.setMessage("Setujui pengajuan ?");
-        builder.setCancelable(true);
-        builder.setPositiveButton("Proses", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String idpinjam = TxID.getText().toString().trim();
-                String kembali = "Disetujui";
-
-                ContentValues values = new ContentValues();
-
-                values.put(DBHelperPeminjaman.row_status, kembali);
-                dbHelper.updateData(values, id);
-                Toast.makeText(AddActivity.this, "Pengajuan Disetujui", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        });
-        builder.setNegativeButton("Batal", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-    }
-
     private void prosesKembali() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(AddActivity.this);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(AddActivityUser.this);
         builder.setMessage("Selesai Peminjaman ?");
         builder.setCancelable(true);
         builder.setPositiveButton("Proses", new DialogInterface.OnClickListener() {
@@ -141,7 +104,7 @@ public class AddActivity extends AppCompatActivity {
 
                 values.put(DBHelperPeminjaman.row_status, kembali);
                 dbHelper.updateData(values, id);
-                Toast.makeText(AddActivity.this, "Proses Peminjaman Sudah Selesai", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddActivityUser.this, "Proses Pengembalian Berhasil", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -226,13 +189,8 @@ public class AddActivity extends AppCompatActivity {
 
             if(status.equals("Belum Disetujui")){
                 BtnProses.setVisibility(View.GONE);
-                BtnPersetujuan.setVisibility(View.VISIBLE);
-            }else if(status.equals("Disetujui")){
-                BtnProses.setVisibility(View.VISIBLE);
-                BtnPersetujuan.setVisibility(View.GONE);
-            } else {
+            }else {
                 BtnProses.setVisibility(View.GONE);
-                BtnPersetujuan.setVisibility(View.GONE);
                 TxNamaPeminjam.setEnabled(false);
                 TxNIM.setEnabled(false);
                 TxLembaga.setEnabled(false);
@@ -274,10 +232,19 @@ public class AddActivity extends AppCompatActivity {
             itemDelete.setVisible(true);
             itemClear.setVisible(false);
         }
-
+        if(status.equals("Belum Disetujui")){
+            itemSave.setVisible(false);
+            itemDelete.setVisible(false);
+            itemClear.setVisible(false);
+        }
+        if(status.equals("Disetujui")){
+            itemSave.setVisible(false);
+            itemDelete.setVisible(false);
+            itemClear.setVisible(false);
+        }
         if(status.equals("Selesai")){
             itemSave.setVisible(false);
-            itemDelete.setVisible(true);
+            itemDelete.setVisible(false);
             itemClear.setVisible(false);
         }
 
@@ -302,14 +269,14 @@ public class AddActivity extends AppCompatActivity {
         }
         switch (item.getItemId()){
             case R.id.action_delete:
-                final AlertDialog.Builder builder = new AlertDialog.Builder(AddActivity.this);
+                final AlertDialog.Builder builder = new AlertDialog.Builder(AddActivityUser.this);
                 builder.setMessage("Data ini akan dihapus");
                 builder.setCancelable(true);
                 builder.setPositiveButton("Hapus", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dbHelper.deleteData(id);
-                        Toast.makeText(AddActivity.this, "Terhapus", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddActivityUser.this, "Terhapus", Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 });
@@ -350,8 +317,8 @@ public class AddActivity extends AppCompatActivity {
         values.put(DBHelperPeminjaman.row_status, status);
 
         if (namaPeminjam.equals("") || nimPeminjam.equals("") || lembagaPeminjam.equals("") || perihal.equals("") || jenisPengajuan.equals("") || tanggalPengajuan.equals("")
-                || tanggalPeminjaman.equals("") || tanggalSelesai.equals("")){
-            Toast.makeText(AddActivity.this, "Isi Data Dengan Lengkap", Toast.LENGTH_SHORT).show();
+        || tanggalPeminjaman.equals("") || tanggalSelesai.equals("")){
+            Toast.makeText(AddActivityUser.this, "Isi Data Dengan Lengkap", Toast.LENGTH_SHORT).show();
         }else {
             if(idpinjam.equals("")){
                 values.put(DBHelperPeminjaman.row_tanggal_pengajuan, tanggalPengajuan);
@@ -360,7 +327,7 @@ public class AddActivity extends AppCompatActivity {
                 dbHelper.updateData(values, id);
             }
 
-            Toast.makeText(AddActivity.this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddActivityUser.this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
             finish();
         }
     }

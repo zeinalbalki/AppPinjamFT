@@ -20,7 +20,27 @@
 
 <!--    </com.google.android.material.appbar.AppBarLayout>-->
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="Menu Admin"/>
+
     <include layout="@layout/content_peminjaman" />
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fabAdmin"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--        android:layout_marginEnd="@dimen/fab_margin"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:layout_marginVertical="90dp"-->
+<!--        app:srcCompat="@drawable/ic_baseline_person_add_24" />-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

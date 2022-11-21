@@ -18,25 +18,53 @@
             android:layout_height="wrap_content"
             android:visibility="gone"/>
         <TextView
-            android:id="@+id/listJudul"
+            android:id="@+id/listNamaPeminjam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Judul Buku"
+            android:text="Nama Peminjam"
             android:textSize="15sp"
             android:textStyle="bold"/>
         <TextView
-            android:id="@+id/listNama"
+            android:id="@+id/listNimPeminjam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nama"
+            android:text="NIM Peminjam"
             android:layout_marginTop="5dp"
             android:textSize="14sp"/>
         <TextView
-            android:id="@+id/listTglPinjam"
+            android:id="@+id/listLembaga"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Tgl Pinjam"
+            android:text="Lembaga Peminjam"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/listPerihal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Perihal"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/listJenisPengajuan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Jenis Pengajuan"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/listTanggalPengajuan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Tanggal Pengajuan"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/listTanggalPeminjaman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Tanggal Peminjaman"
             android:textSize="14sp"/>
         <TextView
             android:id="@+id/listStatus"

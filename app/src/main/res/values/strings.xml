@@ -10,4 +10,10 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_menu_pengajuan">MenuPengajuan</string>
     <string name="action_settings">Settings</string>
+    <string-array name="choice_sort">
+        <item>Semua Data</item>
+        <item>Belum Disetujui</item>
+        <item>Disetujui</item>
+        <item>Selesai</item>
+    </string-array>
 </resources>

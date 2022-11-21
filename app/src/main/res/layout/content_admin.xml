@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Peminjaman"
+    tools:context=".KelolaAdmin"
     android:layout_marginTop="30dp"
-    tools:showIn="@layout/activity_peminjaman">
+    tools:showIn="@layout/activity_kelola_admin">
 
     <ListView
-        android:id="@+id/list_pinjam"
+        android:id="@+id/list_admin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="15dp"

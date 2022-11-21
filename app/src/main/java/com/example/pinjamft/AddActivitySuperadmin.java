@@ -26,7 +26,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class AddActivity extends AppCompatActivity {
+public class AddActivitySuperadmin extends AppCompatActivity {
 
     DBHelperPeminjaman dbHelper;
     TextView TvStatus;
@@ -40,7 +40,7 @@ public class AddActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
+        setContentView(R.layout.activity_add_superadmin);
 
         dbHelper = new DBHelperPeminjaman(this);
 
@@ -99,7 +99,7 @@ public class AddActivity extends AppCompatActivity {
     }
 
     private void prosesPersetujuan() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(AddActivity.this);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(AddActivitySuperadmin.this);
         builder.setMessage("Setujui pengajuan ?");
         builder.setCancelable(true);
         builder.setPositiveButton("Proses", new DialogInterface.OnClickListener() {
@@ -112,7 +112,7 @@ public class AddActivity extends AppCompatActivity {
 
                 values.put(DBHelperPeminjaman.row_status, kembali);
                 dbHelper.updateData(values, id);
-                Toast.makeText(AddActivity.this, "Pengajuan Disetujui", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddActivitySuperadmin.this, "Pengajuan Disetujui", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -128,7 +128,7 @@ public class AddActivity extends AppCompatActivity {
     }
 
     private void prosesKembali() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(AddActivity.this);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(AddActivitySuperadmin.this);
         builder.setMessage("Selesai Peminjaman ?");
         builder.setCancelable(true);
         builder.setPositiveButton("Proses", new DialogInterface.OnClickListener() {
@@ -141,7 +141,7 @@ public class AddActivity extends AppCompatActivity {
 
                 values.put(DBHelperPeminjaman.row_status, kembali);
                 dbHelper.updateData(values, id);
-                Toast.makeText(AddActivity.this, "Proses Peminjaman Sudah Selesai", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddActivitySuperadmin.this, "Proses Peminjaman Sudah Selesai", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -302,14 +302,14 @@ public class AddActivity extends AppCompatActivity {
         }
         switch (item.getItemId()){
             case R.id.action_delete:
-                final AlertDialog.Builder builder = new AlertDialog.Builder(AddActivity.this);
+                final AlertDialog.Builder builder = new AlertDialog.Builder(AddActivitySuperadmin.this);
                 builder.setMessage("Data ini akan dihapus");
                 builder.setCancelable(true);
                 builder.setPositiveButton("Hapus", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dbHelper.deleteData(id);
-                        Toast.makeText(AddActivity.this, "Terhapus", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddActivitySuperadmin.this, "Terhapus", Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 });
@@ -351,7 +351,7 @@ public class AddActivity extends AppCompatActivity {
 
         if (namaPeminjam.equals("") || nimPeminjam.equals("") || lembagaPeminjam.equals("") || perihal.equals("") || jenisPengajuan.equals("") || tanggalPengajuan.equals("")
                 || tanggalPeminjaman.equals("") || tanggalSelesai.equals("")){
-            Toast.makeText(AddActivity.this, "Isi Data Dengan Lengkap", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddActivitySuperadmin.this, "Isi Data Dengan Lengkap", Toast.LENGTH_SHORT).show();
         }else {
             if(idpinjam.equals("")){
                 values.put(DBHelperPeminjaman.row_tanggal_pengajuan, tanggalPengajuan);
@@ -360,7 +360,7 @@ public class AddActivity extends AppCompatActivity {
                 dbHelper.updateData(values, id);
             }
 
-            Toast.makeText(AddActivity.this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddActivitySuperadmin.this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
             finish();
         }
     }
