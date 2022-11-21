@@ -11,7 +11,7 @@
         android:id="@+id/logo"
         android:layout_width="200px"
         android:layout_height="200px"
-        android:src="@drawable/logo_unsoed"
+        android:src="@drawable/logo_ft"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,7 +29,7 @@
         android:textStyle="bold"
         android:textSize="30dp"
         android:fontFamily="cursive"
-        android:textColor="#FCE700"
+        android:textColor="#3F51B5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo">
