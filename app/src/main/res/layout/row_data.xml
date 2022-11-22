@@ -73,6 +73,6 @@
             android:layout_marginTop="5dp"
             android:gravity="right"
             android:text="Status"
-            android:textSize="13sp"/>
+            android:textSize="13sp" />
     </LinearLayout>
 </LinearLayout>

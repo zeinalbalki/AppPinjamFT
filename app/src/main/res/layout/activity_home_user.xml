@@ -4,111 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="15dp"
-    android:layout_marginTop="20dp"
-    tools:context=".HomeUser">
+    tools:context=".HomeUser"
+    android:background="@drawable/backgroud">
 
-    <ImageView
-        android:id="@+id/imgBg"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/cover" />
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
 
-    <TextView
-        android:id="@+id/textLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="30dp"
-        android:text="PinjamFT"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        />
+        <ImageView
+            android:id="@+id/imgBg"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/ftcover" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="38dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="30dp"
-        android:id="@+id/textjudul"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:text="Selamat Datang"
-        android:fontFamily="@font/poppins"/>
-    <TextView
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:textAlignment="textStart"
-        android:layout_below="@id/textjudul"
-        android:layout_marginTop="-10dp"
-        android:layout_marginLeft="30dp"
-        android:id="@+id/textdeskripsi"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:fontFamily="@font/montserratthin"
-        tools:ignore="RtlCompat" />
+        <TextView
+            android:id="@+id/textLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="200dp"
+            android:text="PinjamFT"
+            android:textSize="40dp"
+            android:textColor="@color/white"
+            android:fontFamily="cursive"
+            android:textStyle="bold"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24dp"
-        android:layout_below="@id/imgBg"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/textjudul2"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:text="Informasi!"
-        android:fontFamily="@font/poppins"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/textjudul"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="Selamat Datang"
+            android:fontFamily="@font/poppins"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="13dp"
-        android:textAlignment="textStart"
-        android:layout_below="@id/textjudul2"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/textdeskripsi2"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:text="Bagi rekan-rekan yang ingin meminjam ruangan atau alat, harap melihat daftar ruangan atau alat yang sudah di pinjam sebelum mengajukan peminjaman"
-        android:fontFamily="@font/montserratthin"
-        tools:ignore="RtlCompat" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:layout_below="@id/imgBg"
+            android:id="@+id/textjudul2"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="Informasi!"
+            android:fontFamily="@font/poppins"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13dp"
+            android:textAlignment="textStart"
+            android:layout_below="@id/textjudul2"
+            android:id="@+id/textdeskripsi2"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="Bagi rekan-rekan yang ingin meminjam ruangan atau alat, harap melihat daftar ruangan atau alat yang sudah di pinjam sebelum mengajukan peminjaman"
+            android:fontFamily="@font/poppinssemi"
+            tools:ignore="RtlCompat" />
 
-    <Button
-        android:id="@+id/btnLoginAdmin"
-        android:layout_below="@id/textdeskripsi2"
-        android:textColor="@color/white"
-        android:fontFamily="@font/poppins"
-        android:textSize="16dp"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
-        android:paddingLeft="20dp"
-        android:drawablePadding="-40dp"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/radius_button"
-        android:text="Login Admin" />
+        <Button
+            android:id="@+id/btnLoginAdmin"
+            android:layout_below="@id/textdeskripsi2"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            android:textSize="16dp"
+            android:drawableLeft="@drawable/ic_baseline_person_24"
+            android:paddingLeft="20dp"
+            android:drawablePadding="-40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/radius_button"
+            android:text="Login Admin" />
 
-    <Button
-        android:id="@+id/btnAjukan"
-        android:layout_below="@id/btnLoginAdmin"
-        android:textColor="@color/white"
-        android:fontFamily="@font/poppins"
-        android:textSize="16dp"
-        android:drawableLeft="@drawable/add"
-        android:paddingLeft="20dp"
-        android:drawablePadding="-40dp"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/radius_button"
-        android:text="Ajukan peminjaman" />
+        <Button
+            android:id="@+id/btnAjukan"
+            android:layout_below="@id/btnLoginAdmin"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            android:textSize="16dp"
+            android:drawableLeft="@drawable/add"
+            android:paddingLeft="20dp"
+            android:drawablePadding="-40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/radius_button"
+            android:text="Ajukan peminjaman" />
+
+    </RelativeLayout>
+
 
 
 </RelativeLayout>
