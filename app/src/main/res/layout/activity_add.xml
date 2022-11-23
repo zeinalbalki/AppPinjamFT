@@ -6,16 +6,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddActivity">
+    tools:context=".AddActivity"
+    android:background="@drawable/backgroud">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ajukan Peminjaman"
+                android:textColor="#3F51B5"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins"/>
 
             <EditText
                 android:id="@+id/txID"
@@ -33,19 +47,29 @@
                 android:id="@+id/txNamaPeminjam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textCapSentences"/>
+                android:inputType="textCapSentences"
+                android:hint="Nama Peminjam"
+                android:textSize="16dp"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:background="@drawable/rounded_border"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NIM Peminjam"
+                android:text="NIM"
                 android:textStyle="bold"
                 android:textSize="16sp"/>
             <EditText
                 android:id="@+id/txNIM"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textCapSentences"/>
+                android:inputType="textCapSentences"
+                android:hint="NIM Peminjam"
+                android:textSize="16dp"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:background="@drawable/rounded_border"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -58,7 +82,12 @@
                 android:id="@+id/txLembaga"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textCapSentences"/>
+                android:inputType="textCapSentences"
+                android:hint="Lembaga Peminjam"
+                android:textSize="16dp"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:background="@drawable/rounded_border"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -70,19 +99,29 @@
                 android:id="@+id/txPerihal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textCapSentences"/>
+                android:inputType="textCapSentences"
+                android:hint="Perihal Peminjaman"
+                android:textSize="16dp"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:background="@drawable/rounded_border"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jenis Pengajuan (ruangan/alat yang dipinjam)"
+                android:text="Jenis Pengajuan "
                 android:textStyle="bold"
                 android:textSize="16sp"/>
             <EditText
                 android:id="@+id/txJenisPengajuan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textCapSentences"/>
+                android:inputType="textCapSentences"
+                android:hint="Ruangan/alat yang dipinjam"
+                android:textSize="16dp"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:background="@drawable/rounded_border"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -95,7 +134,12 @@
                 android:enabled="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="date"/>
+                android:inputType="date"
+                android:hint="Tanggal Pengajuan"
+                android:textSize="16dp"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:background="@drawable/rounded_border"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -108,7 +152,12 @@
                 android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="date"/>
+                android:inputType="date"
+                android:hint="Tanggal Peminjaman"
+                android:textSize="16dp"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:background="@drawable/rounded_border"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -121,7 +170,12 @@
                 android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="date"/>
+                android:inputType="date"
+                android:hint="Tanggal Selesai"
+                android:textSize="16dp"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:background="@drawable/rounded_border"/>
 
             <TextView
                 android:id="@+id/tVStatus"

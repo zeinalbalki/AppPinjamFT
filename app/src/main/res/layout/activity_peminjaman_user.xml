@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Peminjaman">
+    tools:context=".Peminjaman"
+    android:background="@drawable/backgroud">
 
     <!--    <com.google.android.material.appbar.AppBarLayout-->
     <!--        android:layout_width="match_parent"-->
@@ -23,12 +24,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="15dp"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/poppins"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:text="Menu Mahasiswa"/>
+        android:text="Menu Mahasiswa"
+        android:textColor="#3F51B5"/>
 
     <include layout="@layout/content_peminjaman" />
 
