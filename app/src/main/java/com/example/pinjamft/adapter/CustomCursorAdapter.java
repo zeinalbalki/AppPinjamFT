@@ -60,7 +60,7 @@ public class CustomCursorAdapter extends CursorAdapter {
         holder.ListJenisPengajuan.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_jenis_pengajuan)));
         holder.ListTanggalPengajuan.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_tanggal_pengajuan)));
         holder.ListTanggalPeminjaman.setText(cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_tanggal_peminjaman)) +
-                " - " + cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_tanggal_selesai)));
+                " sampai " + cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_tanggal_selesai)));
         holder.ListStatus.setText("Status: " + cursor.getString(cursor.getColumnIndex(DBHelperPeminjaman.row_status)));
     }
 
